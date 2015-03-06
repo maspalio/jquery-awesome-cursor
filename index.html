@@ -484,7 +484,9 @@
                     <li>both</li>
                   </ul>
 
-                    All other values are ignored
+                  <p>To disable flipping, set <code>flip</code> to any falsy value (<code>false</code>, <code>null</code>, <code>''</code>, etc.).  All other
+                  values will result in an <span class="text-danger"><strong>error being thrown</strong></span>.
+                  </p>
 
                   <br>
                   <pre>$('body').awesomeCursor('pencil', {
@@ -499,7 +501,7 @@
                       </label>
                       <div class="col-lg-3">
                         <select class="form-control" name="flip">
-                          <option value="none">none</option>
+                          <option value="">none</option>
                           <option value="horizontal" selected>horizontal</option>
                           <option value="vertical">vertical</option>
                           <option value="both">both</option>
@@ -799,16 +801,6 @@ font: {
                   ><i class="fa fa-check"></i> v0.1.0</a>
             </li>
             <li>IE11 support (if possible)</li>
-          </ul>
-
-          <p>The following features are being considered, and may or may not get implemented:</p>
-          <ul>
-            <li>Composite cursors built from multiple icons, similarly to how FontAwesome allows icons to be stacked</li>
-            <li>A data attributes API.  This would be an opt-in API, which would behave in a similar to fashion to the data API for
-              <a data-ga-category="external links"
-                data-ga-label="bootstrap-tooltips"
-                href="http://getbootstrap.com/javascript/#tooltips"
-                >Bootstrap tooltips</a></li>
           </ul>
 
           <h4><strong>Releases</strong></h4>
