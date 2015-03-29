@@ -144,6 +144,14 @@ $(window).load(function() {
     outline: 'brown'
   });
 
+  $('#iframe').ready(function(e) {
+    $('#iframe').contents().find('img').awesomeCursor('map-marker', {
+      color: 'maroon',
+      size: 32,
+      hotspot: 'center bottom'
+    });
+  });
+
   backToTopTemplate = $('<a />', {
     class: 'text-muted pull-right back-to-top',
     href: '#',
@@ -169,4 +177,20 @@ $(window).load(function() {
   function trackDemoUsage(label) {
     ga('send', 'event', 'demo', 'interaction', label);
   }
+
+  // Google Maps
+  (function initialize() {
+    var map = new google.maps.Map($('#google-maps')[0], {
+      center: { lat: 37.544494, lng: 138.276398 },
+      zoom: 8
+    });
+
+    google.maps.event.addListenerOnce(map, 'bounds_changed', function() {
+      $('#google-maps').find('div').awesomeCursor('location-arrow', {
+        size: 22,
+        color: 'orange',
+        flip: 'horizontal'
+      });
+    });
+  })();
 });

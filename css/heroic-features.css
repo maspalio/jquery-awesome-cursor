@@ -14,7 +14,7 @@
 }
 .hero-feature .example {
   background: ivory;
-  height: 160px;
+  height: 230px;
 }
 .hero-feature pre {
   font-size: 0.8em;
@@ -114,4 +114,10 @@ footer .profile-links a {
 }
 #options .panel-group > div:not(.panel) {
   margin-top: 2em;
+}
+iframe,
+#google-maps {
+  width: 100%;
+  height: 100%;
+  border: 5px inset #ccc;
 }

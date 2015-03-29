@@ -253,6 +253,14 @@
     /* your options here */
   });</pre>
         </div>
+
+        <div class="col-lg-12">
+          <h3>Resetting the cursor</h3>
+
+          <p>You can reset the cursor to it's previous icon using jQuery's <code class="subtle">css</code> function:</p>
+
+          <pre class="subtle">$('body').css('cursor', '');</pre>
+        </div>
       </div>
     </section>
     <hr>
@@ -757,6 +765,50 @@ font: {
         </div>
 
       </div>
+      <div class="row text-center">
+        <div class="col-md-6 col-sm-6 hero-feature">
+          <div class="thumbnail">
+            <div class="example"><iframe src="iframe.html" id="iframe"></iframe></div>
+            <div class="caption">
+              <h3>&lt;iframe&gt;</h3>
+              <p class="text-left">Wait for the <code class="subtle">&lt;iframe&gt;</code> to load, then set the cursor on the contents:</p>
+  <pre>$('#iframe').ready(function(e) {
+  $('#iframe').contents().find('img').awesomeCursor('map-marker', {
+    color: 'maroon',
+    size: 32,
+    outline: '#ccc',
+    hotspot: 'center bottom'
+  });
+});</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 hero-feature">
+          <div class="thumbnail">
+            <div class="example">
+              <div id="google-maps"></div>
+            </div>
+            <div class="caption">
+              <h3>Google Maps</h3>
+              <p class="text-left">Using the <a href="https://developers.google.com/maps/documentation/javascript/" data-ga-label="google maps api docs"data-ga-category="external links">Google Maps Javascript API v3</a>.</p>
+  <pre>var map = new google.maps.Map($('#google-maps')[0], {
+  center: { lat: 37.544494, lng: 138.276398 },
+  zoom: 8
+});
+
+google.maps.event.addListenerOnce(map, 'bounds_changed', function() {
+  $('#google-maps').find('div').awesomeCursor('location-arrow', {
+    size: 22,
+    color: 'orange',
+    flip: 'horizontal'
+  });
+});</pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
       <!-- /.row -->
     </section>
     <hr>
@@ -895,6 +947,8 @@ font: {
     }
 
   </script>
+
+  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB8TKkWFEfibOIdgMpFQXw1yFW0ngkqVZk"></script>
 </body>
 
 </html>

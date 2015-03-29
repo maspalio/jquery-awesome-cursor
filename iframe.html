@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>jQuery Awesome Cursor IFrame Demo</title>
+    <link href="bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+
+  <body style="text-align: center;">
+    <div class="map" style="position: relative;">
+      <img src="img/iframe-sample.png" alt="Meaningless placeholder image">
+
+    </div>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script>
+      $('.map img').on('click', function(ev) {
+        console.log(ev, $(this));
+        $('.map').append($('<i class="fa fa-map-marker" />').css({
+          color: 'yellow',
+          position: 'absolute',
+          left: ev.pageX - 16,
+          top: ev.pageY - 16
+        }));
+      });
+    </script>
+  </body>
+</html>
